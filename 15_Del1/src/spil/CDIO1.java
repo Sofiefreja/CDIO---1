@@ -125,8 +125,7 @@ public class CDIO1 {
 						} else if(six2 == 1) {
 							System.out.println(p2 + "is the winnersdfg!!!");
 							return;
-						}
-						break;
+						} break;
 					}
 				} else if (ans.equals("N")|| ans.equals("n")) {
 					System.out.println("Game over");
