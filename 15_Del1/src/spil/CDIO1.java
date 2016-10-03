@@ -12,8 +12,9 @@ public class CDIO1 {
 		
 		Scanner input = new Scanner(System.in);
 		Cup cup = new Cup();
-		
+		System.out.println("****************************************");
 		System.out.println("********Welcome to the dice game********");
+		System.out.println("****************************************");
 		System.out.println("Player One input your name:");
 		p1 = input.nextLine();
 		System.out.println("Player Two input your name:");
