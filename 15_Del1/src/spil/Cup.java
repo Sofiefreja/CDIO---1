@@ -5,8 +5,8 @@ public class Cup {
 	private Dice d2 = new Dice();
 
 	public void roll() {
-		this.d1.roll();
-		this.d2.roll();
+		d1.roll();
+		d2.roll();
 	}
 	public int getSum() {
 		int sum = this.d1.getValue() + this.d2.getValue();

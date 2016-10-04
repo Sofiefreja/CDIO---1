@@ -11,163 +11,75 @@ public class CDIO1 {
 	public static int sumP1 = 0;
 	public static int sumP2 = 0;
 	public static void main(String[] args) {
-		int done = 0;
-		int six1 = 0;
-		int six2 = 0;
-		Scanner input = new Scanner(System.in);
-		Cup cup = new Cup();
-		System.out.println("****************************************");
-		System.out.println("********Welcome to the dice game********");
-		System.out.println("****************************************");
-		System.out.println("Player One input your name:");
-		p1 = input.nextLine();
-		System.out.println("Player Two input your name:");
-		p2 = input.nextLine();
+		Field[] fields = new Field[1];
+		fields[0] = new Empty.Builder().build();
+		
+		GUI.create(fields);
+		GUI.setChanceCard("");
+		
+//		Scanner input = new Scanner(System.in);
+//		Cup cup = new Cup();
+		Dice d1 = new Dice();
+		Dice d2 = new Dice();
+
+		GUI.showMessage("********Welcome to the dice game********");
+		
+		p1 = GUI.getUserString("Player One: input your name:");
+		p2 = GUI.getUserString("Player Two input your name:");
+		
 		String cp = p1;
-		while(done == 0){
 		do {
 			if(cp == p1){
-				System.out.println("Roll the die " + p1 + " (Y/N)?" );
-				String ans = input.nextLine();
-				if(ans.equals("Y")|| ans.equals("y")){
-					cup.roll();
-					System.out.println(p1 + " rolls" + cup.toString());
-					switch(cup.getEns()) {
-					case 0: 
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 0;
-						cp = p2;
-						break;
-					case 1: 
-						sumP1 = 0;
-						printPoints();
-						six1 = 0;
-						cp = p1;
-						break;
-					case 2: 
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 0;
-						cp = p1;
-						break;
-					case 3:
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 0;
-						cp = p1;
-						break;
-					case 4:
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 0;
-						cp = p1;
-						break;
-					case 5:
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 0;
-						cp = p1;
-						break;
-					case 6: 
-						if(six1 == 0) {
-						sumP1 = sumP1 + cup.getSum();
-						printPoints();
-						six1 = 1;
-						cp = p1;
-						} else if(six1 == 1) {
-							System.out.println(p1 + "is the winner!!!");
-							return;
-						}
-						break;
-					}
-					} 
-				 else if(ans.equals("N") || ans.equals("n")) {
-					System.out.println("Game over");
+				//System.out.println("Roll the die " + p1 + " (Y/N)?" );
+				String ans = GUI.getUserButtonPressed(p1+": do you want to roll the dice?:", "Yes","No");
+				if(ans.equals("Yes")){
+					d1.roll();
+					d2.roll();
+					GUI.setDice(d1.getValue(), d2.getValue());
+					GUI.showMessage(p1+" rolled a "+d1.getValue()+" and a "+d2.getValue());
+					sumP1 = sumP1 +d1.getValue()+d2.getValue();
+					printPoints();
+					cp = p2;
+				} else if(ans.equals("No")) {
+					GUI.showMessage("Game over");
+					GUI.close();
 					break;
-				} else {
-					System.out.println("Please enter Y or N");
-				}
+				} 
+//				else {
+//					System.out.println("Please enter Y or N");
+//				}
 			} else {
-				System.out.println("Roll the die " + p2 + "(Y/N)?" );
-				String ans = input.nextLine();
-				if(ans.equals("Y")|| ans.equals("y")){
-					cup.roll();
-					System.out.println(p2 + " rolls" + cup.toString());
-					switch(cup.getEns()) {
-					case 0: 
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 0;
-						cp = p1;
-						break;
-					case 1: 
-						sumP2 = 0;
-						printPoints();
-						six2 = 0;
-						cp = p2;
-						break;
-					case 2: 
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 0;
-						cp = p2;
-						break;
-					case 3:
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 0;
-						cp = p2;
-						break;
-					case 4:
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 0;
-						cp = p2;
-						break;
-					case 5:
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 0;
-						cp = p2;
-						break;
-					case 6: 
-						if(six2 == 0) {
-						sumP2 = sumP2 + cup.getSum();
-						printPoints();
-						six2 = 1;
-						cp = p2;
-						} else if(six2 == 1) {
-							System.out.println(p2 + "is the winnersdfg!!!");
-							return;
-						} break;
-					}
-				} else if (ans.equals("N")|| ans.equals("n")) {
-					System.out.println("Game over");
+				String ans = GUI.getUserButtonPressed(p2+": do you want to roll the dice?:", "Yes","No");
+				if(ans.equals("Yes")){
+//					cup.roll();
+//					System.out.println(p2 + " rolls" + cup.toString());
+//					sumP2 = sumP2 + cup.getSum();
+//					printPoints();
+//					cp = p1;
+					d1.roll();
+					d2.roll();
+					GUI.setDice(d1.getValue(), d2.getValue());
+					GUI.showMessage(p2+" rolled a "+d1.getValue()+" and a "+d2.getValue());
+					sumP2 = sumP2 +d1.getValue()+d2.getValue();
+					printPoints();
+					cp = p1;
+				} else if (ans.equals("N0")) {
+					GUI.showMessage("Game over");
+					GUI.close();
 					break;
-				} else {
-					System.out.println("Please enter Y or N");
-				}
+				} 
+//				else {
+//					System.out.println("Please enter Y or N");
+//				}
 			}
 		}
 		while(sumP1 < 40 && sumP2 < 40); 
-			if(cp == p2){
-				if(cup.getEns() != 0 || cup.getEns()!= 1){
-					System.out.println(p2 + " is the winner!!!");
-					done = 1;
-				} else {
-					cp = p2;
-				}
-			} else if(cp == p1) {
-				if(cup.getEns() != 0 || cup.getEns() != 1){
-					System.out.println(p1 + " is the winner!!!");
-					done = 1;
-				} else {
-					cp = p1;
-				}
+			if(sumP1 > sumP2) {
+				GUI.showMessage(p1 + " is the winner!!!");
+			}	else if(sumP2 > sumP1){
+				GUI.showMessage(p2 + " is the winner!!!");
 			}
-		}
-		input.close();
+			GUI.close();
 	}
 public static void printPoints() {
 	System.out.println(p1 + " has" + sumP1 + " points");
