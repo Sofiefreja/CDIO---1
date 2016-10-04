@@ -33,31 +33,37 @@ public class CDIO1 {
 					case 0: 
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
+						six1 = 0;
 						cp = p2;
 						break;
 					case 1: 
 						sumP1 = 0;
 						printPoints();
+						six1 = 0;
 						cp = p1;
 						break;
 					case 2: 
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
+						six1 = 0;
 						cp = p1;
 						break;
 					case 3:
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
+						six1 = 0;
 						cp = p1;
 						break;
 					case 4:
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
+						six1 = 0;
 						cp = p1;
 						break;
 					case 5:
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
+						six1 = 0;
 						cp = p1;
 						break;
 					case 6: 
@@ -89,31 +95,37 @@ public class CDIO1 {
 					case 0: 
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
+						six2 = 0;
 						cp = p1;
 						break;
 					case 1: 
 						sumP2 = 0;
 						printPoints();
+						six2 = 0;
 						cp = p2;
 						break;
 					case 2: 
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
+						six2 = 0;
 						cp = p2;
 						break;
 					case 3:
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
+						six2 = 0;
 						cp = p2;
 						break;
 					case 4:
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
+						six2 = 0;
 						cp = p2;
 						break;
 					case 5:
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
+						six2 = 0;
 						cp = p2;
 						break;
 					case 6: 
@@ -137,14 +149,14 @@ public class CDIO1 {
 		}
 		while(sumP1 < 40 && sumP2 < 40); 
 			if(cp == p2){
-				if(cup.getEns() == 2 || cup.getEns() == 3 || cup.getEns() == 4|| cup.getEns() == 5|| cup.getEns() == 6){
+				if(cup.getEns() != 0 || cup.getEns()!= 1){
 					System.out.println(p2 + " is the winner!!!");
 					done = 1;
 				} else {
 					cp = p2;
 				}
 			} else if(cp == p1) {
-				if(cup.getEns() == 2 || cup.getEns() == 3 || cup.getEns() == 4|| cup.getEns() == 5|| cup.getEns() == 6){
+				if(cup.getEns() != 0 || cup.getEns() != 1){
 					System.out.println(p1 + " is the winner!!!");
 					done = 1;
 				} else {
