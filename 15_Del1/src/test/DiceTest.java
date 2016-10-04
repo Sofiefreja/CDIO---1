@@ -8,7 +8,7 @@ import spil.Dice;
 
 public class DiceTest {
 
-	@Test
+	@Test 
 	public void test() {
 		int en=0,to=0,tre=0,fire=0,fem=0,seks=0;
 		Dice d1 = new Dice();
