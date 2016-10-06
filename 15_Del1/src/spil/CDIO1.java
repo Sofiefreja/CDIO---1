@@ -14,7 +14,6 @@ public class CDIO1 {
 		int six2 = 0;
 		long startTime=0;
 		long endTime = 0;
-		long t=0;
 		double r=0;
 		Scanner input = new Scanner(System.in);
 		Cup cup = new Cup();
@@ -32,7 +31,6 @@ public class CDIO1 {
 			if(cp.equals(p1)){
 				startTime=0;
 				endTime=0;
-				t=0;
 				r=0;
 				System.out.println("Roll the die " + p1 + " (Y/N)?" );
 				String ans = input.nextLine();
@@ -108,7 +106,6 @@ public class CDIO1 {
 			} else {//The same routine for player 2
 				startTime=0;
 				endTime=0;
-				t=0;
 				r=0;
 				System.out.println("Roll the die " + p2 + "(Y/N)?" );
 				String ans = input.nextLine();
@@ -117,7 +114,6 @@ public class CDIO1 {
 					cup.roll();
 					System.out.println(p2 + " rolls" + cup.toString());
 					endTime=System.nanoTime();
-					//t = TimeUnit.NANOSECONDS.toMillis(endTime-startTime);
 					r=((double) endTime - (double) startTime)/(double)1000000;
 					System.out.println("Took "+(r) + " ms");
 					switch(cup.getEqual()) {
