@@ -1,7 +1,6 @@
 package spil;
 
 import java.util.*;
-import java.util.concurrent.TimeUnit;
 
 public class CDIO1 {
 	public static String p1;
@@ -12,9 +11,6 @@ public class CDIO1 {
 		int done = 0;
 		int six1 = 0;
 		int six2 = 0;
-		long startTime=0;
-		long endTime = 0;
-		double r=0;
 		Scanner input = new Scanner(System.in);
 		Cup cup = new Cup();
 		//The game is started, and the players are able to input a name
@@ -29,19 +25,12 @@ public class CDIO1 {
 		while(done == 0){
 		do {
 			if(cp.equals(p1)){
-				startTime=0;
-				endTime=0;
-				r=0;
 				System.out.println("Roll the die " + p1 + " (Y/N)?" );
 				String ans = input.nextLine();
 				if(ans.equals("Y")|| ans.equals("y")){
 					//The die are thrown and the result printed 
-					startTime=System.nanoTime();
 					cup.roll();
 					System.out.println(p1 + " rolls" + cup.toString());
-					endTime=System.nanoTime();
-					r=((double) endTime - (double) startTime)/(double)1000000;
-					System.out.println("Took "+(r) + " ms");
 					/*The switch case takes use of the cup class
 					 * it defines what  happens if the result is 
 					 * two equal numbers or different*/
@@ -104,18 +93,11 @@ public class CDIO1 {
 					System.out.println("Please enter Y or N");
 				}
 			} else {//The same routine for player 2
-				startTime=0;
-				endTime=0;
-				r=0;
 				System.out.println("Roll the die " + p2 + "(Y/N)?" );
 				String ans = input.nextLine();
 				if(ans.equals("Y")|| ans.equals("y")){
-					startTime=System.nanoTime();
 					cup.roll();
 					System.out.println(p2 + " rolls" + cup.toString());
-					endTime=System.nanoTime();
-					r=((double) endTime - (double) startTime)/(double)1000000;
-					System.out.println("Took "+(r) + " ms");
 					switch(cup.getEqual()) {
 					case 0: 
 						sumP2 = sumP2 + cup.getSum();
