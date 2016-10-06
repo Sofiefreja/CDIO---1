@@ -175,7 +175,7 @@ public class CDIO1 {
 	}
 public static void printPoints() {
 	//Print function, to print point score.
-	System.out.println(p1 + " has" + sumP1 + " points");
-	System.out.println(p2 + " has" + sumP2 + " points");
+	System.out.println(p1 + " has " + sumP1 + " points");
+	System.out.println(p2 + " has " + sumP2 + " points");
 }
 }
