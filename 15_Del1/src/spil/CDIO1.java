@@ -155,14 +155,14 @@ public class CDIO1 {
 			}
 		}
 		while(sumP1 < 40 && sumP2 < 40); 
-			if(cp == p2){//Checks to see which is the current player, afterwards if the player gets two equal numbers
+			if(cp == p2 && sumP2 > 40){//Checks to see which is the current player, afterwards if the player gets two equal numbers
 				if(cup.getEqual() == 2 || cup.getEqual()== 3|| cup.getEqual()== 4|| cup.getEqual()== 5|| cup.getEqual()== 6){
 					System.out.println(p2 + " is the winner!!!");
 					done = 1;//Exits while loop and terminates game
 				} else {
 					cp = p2;//The player has more than 40 points, but hasn't thrown two equals, gets another turn.
 				}
-			} else if(cp == p1) {
+			} else if(cp == p1 && sumP1 > 40){
 				if(cup.getEqual() == 2 || cup.getEqual()== 3|| cup.getEqual()== 4|| cup.getEqual()== 5|| cup.getEqual()== 6){
 					System.out.println(p1 + " is the winner!!!");
 					done = 1;
