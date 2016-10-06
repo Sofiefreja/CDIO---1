@@ -29,7 +29,7 @@ public class CDIO1 {
 				if(ans.equals("Y")|| ans.equals("y")){
 					cup.roll();
 					System.out.println(p1 + " rolls" + cup.toString());
-					switch(cup.getEns()) {
+					switch(cup.getEqual()) {
 					case 0: 
 						sumP1 = sumP1 + cup.getSum();
 						printPoints();
@@ -91,7 +91,7 @@ public class CDIO1 {
 				if(ans.equals("Y")|| ans.equals("y")){
 					cup.roll();
 					System.out.println(p2 + " rolls" + cup.toString());
-					switch(cup.getEns()) {
+					switch(cup.getEqual()) {
 					case 0: 
 						sumP2 = sumP2 + cup.getSum();
 						printPoints();
@@ -149,14 +149,14 @@ public class CDIO1 {
 		}
 		while(sumP1 < 40 && sumP2 < 40); 
 			if(cp == p2){
-				if(cup.getEns() == 2 || cup.getEns()== 3|| cup.getEns()== 4|| cup.getEns()== 5|| cup.getEns()== 6){
+				if(cup.getEqual() == 2 || cup.getEqual()== 3|| cup.getEqual()== 4|| cup.getEqual()== 5|| cup.getEqual()== 6){
 					System.out.println(p2 + " is the winner!!!");
 					done = 1;
 				} else {
 					cp = p2;
 				}
 			} else if(cp == p1) {
-				if(cup.getEns() == 2 || cup.getEns()== 3|| cup.getEns()== 4|| cup.getEns()== 5|| cup.getEns()== 6){
+				if(cup.getEqual() == 2 || cup.getEqual()== 3|| cup.getEqual()== 4|| cup.getEqual()== 5|| cup.getEqual()== 6){
 					System.out.println(p1 + " is the winner!!!");
 					done = 1;
 				} else {

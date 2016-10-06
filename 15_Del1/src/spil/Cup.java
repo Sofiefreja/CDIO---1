@@ -12,7 +12,7 @@ public class Cup {
 		int sum = this.d1.getValue() + this.d2.getValue();
 		return sum;
 	}
-	public int getEns() {
+	public int getEqual() {
 		int num = 0;
 		if (this.d1.getValue() == this.d2.getValue()) {
 			switch (d1.getValue()) {
