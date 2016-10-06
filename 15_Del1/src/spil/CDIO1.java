@@ -24,7 +24,7 @@ public class CDIO1 {
 		String cp = p1;
 		while(done == 0){
 		do {
-			if(cp == p1){
+			if(cp.equals(p1)){
 				System.out.println("Roll the die " + p1 + " (Y/N)?" );
 				String ans = input.nextLine();
 				if(ans.equals("Y")|| ans.equals("y")){
