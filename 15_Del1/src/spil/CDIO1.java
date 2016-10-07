@@ -5,6 +5,10 @@ import java.util.*;
  * Brah
  */
 
+import desktop_fields.Empty;
+import desktop_fields.Field;
+import desktop_resources.GUI;
+
 public class CDIO1 {
 	public static String p1;
 	public static String p2;
