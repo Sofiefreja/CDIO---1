@@ -10,8 +10,10 @@ public class DiceTest {
 
 	@Test 
 	public void test() {
+		//initializes counters
 		int en=0,to=0,tre=0,fire=0,fem=0,seks=0;
 		Dice d1 = new Dice();
+		////increments counters for every roll
 		for(int i=0;i<10000;i++){
 			d1.roll();
 			switch(d1.getValue()){
@@ -35,6 +37,7 @@ public class DiceTest {
 				break;
 			}
 		}
+		//prints counters for manual evaluation.
 		System.out.println(en+"\n"+to+"\n"+tre+"\n"+fire+"\n"+fem+"\n"+seks);
 	}
 

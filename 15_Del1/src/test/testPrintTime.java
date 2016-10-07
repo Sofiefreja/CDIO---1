@@ -12,7 +12,7 @@ public class testPrintTime {
 	public void test() {
 		double threshold=333;//defines threshold for accepted time spent
 		long startTime=0;//initiates timer
-		long endTime = 0;
+		long endTime = 0;//initiates time stopper
 		double r=0; 
 		Cup c = new Cup();
 		String p2="Player#";

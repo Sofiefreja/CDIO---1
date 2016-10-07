@@ -10,8 +10,9 @@ public class CupTest {
 	@Test
 	public void test() {
 		Cup c = new Cup();
+		//initializes counters
 		int to = 0, tre = 0, fire = 0, fem = 0, seks = 0, syv = 0, otte = 0, ni = 0, ti = 0, elleve = 0, tolv = 0;
-		for (int i = 1; i <= 10000; i++) {
+		for (int i = 1; i <= 10000; i++) { //increments counters for every roll
 			c.roll();
 			switch (c.getSum()) {
 			case 2:
@@ -49,6 +50,7 @@ public class CupTest {
 				break;
 			}
 		}
+		//print the counters for manual evaluation.
 		System.out.println(to);
 		System.out.println(tre);
 		System.out.println(fire);

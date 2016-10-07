@@ -11,15 +11,12 @@ public class DiceMeanTest {
 	@Test
 	public void test() {
 		Dice d1 = new Dice();
-		int n=100000;//definerer antal kast
-		boolean test=false;
+		int n=100000;//define number of rolls
+		boolean test=false; //initializes the boolean test value.
 		double lowerThreshold=3.45;//define lower threshold for an acceptable mean
 		double upperThreshold=3.55;//define upper threshold for an acceptable mean
-//		double varians=0;
-//		double temp = 0;
 		double sum=0.0;
 		double mean=0.0;
-//		double StdDev=0.0;
 		int[]arr=new int[n];
 		for(int i=0;i<n;i++){//rolling n times
 			d1.roll();
@@ -28,17 +25,12 @@ public class DiceMeanTest {
 		for(double a : arr){ //summing the values
 			sum+=a;
 		}
-		mean=sum/(double)arr.length;
-//		for(double a:arr){
-//			temp+=Math.pow((a-mean), 2);
-//		}
-//		varians=temp/arr.length;
-//		StdDev=Math.sqrt(varians);
+		mean=sum/(double)arr.length;//calculating mean
 		System.out.println(mean);
 		if(mean>lowerThreshold &&mean<upperThreshold){//true if mean is within the threshold boundaries
 			test=true;
 		}
-		assertTrue(test);
+		assertTrue(test);//asserts the boolean value of "test"
 		System.out.println(test);
 	}
 	
