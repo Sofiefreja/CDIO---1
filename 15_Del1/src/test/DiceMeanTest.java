@@ -13,19 +13,19 @@ public class DiceMeanTest {
 		Dice d1 = new Dice();
 		int n=100000;//definerer antal kast
 		boolean test=false;
-		double lowerThreshold=3.45;//definerer nedre grænse for en acceptabelt middelværdi
-		double upperThreshold=3.55;//definerer øvre grænse for en acceptabelt middelværdi
+		double lowerThreshold=3.45;//define lower threshold for an acceptable mean
+		double upperThreshold=3.55;//define upper threshold for an acceptable mean
 //		double varians=0;
 //		double temp = 0;
 		double sum=0.0;
 		double mean=0.0;
 //		double StdDev=0.0;
 		int[]arr=new int[n];
-		for(int i=0;i<n;i++){
+		for(int i=0;i<n;i++){//rolling n times
 			d1.roll();
 			arr[i]=d1.getValue();
 		} 	
-		for(double a : arr){
+		for(double a : arr){ //summing the values
 			sum+=a;
 		}
 		mean=sum/(double)arr.length;
@@ -35,7 +35,7 @@ public class DiceMeanTest {
 //		varians=temp/arr.length;
 //		StdDev=Math.sqrt(varians);
 		System.out.println(mean);
-		if(mean>lowerThreshold &&mean<upperThreshold){
+		if(mean>lowerThreshold &&mean<upperThreshold){//true if mean is within the threshold boundaries
 			test=true;
 		}
 		assertTrue(test);
