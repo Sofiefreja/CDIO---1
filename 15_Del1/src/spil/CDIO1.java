@@ -17,6 +17,13 @@ public class CDIO1 {
 		System.out.println("****************************************");
 		System.out.println("********Welcome to the dice game********");
 		System.out.println("****************************************");
+		System.out.println("");
+		System.out.println("This game of chance is based on rolling two die!");
+		System.out.println("The game ends if you reach 40 points and roll a double!!");
+		System.out.println("Rule number 1: When you roll two of same eyes, you get another roll.");
+		System.out.println("Rule number 2: If you roll double ones, you lose all your points, and roll again.");
+		System.out.println("Rule number 3: If you roll double sixes two times in a row you WIN!!");
+		System.out.println("");
 		System.out.println("Player One input your name:");
 		p1 = input.nextLine();
 		System.out.println("Player Two input your name:");
